@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\sunamoWithoutDep\SunamoExceptions\SunamoExceptions.csproj"></ProjectReference>
+    <ProjectReference Include="..\SunamoCssGenerator\SunamoCssGenerator.csproj"></ProjectReference>
+  </ItemGroup>
+</Project>
