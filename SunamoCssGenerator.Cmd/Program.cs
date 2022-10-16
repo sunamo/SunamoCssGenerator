@@ -26,7 +26,7 @@ namespace SunamoCssGenerator.Cmd
             CssResponsiveGenerator g = new CssResponsiveGenerator();
             g.Generate(d);
 
-            outputFileCss = @"E:\Documents\vs\Projects\sunamo.cz\lyrics.sunamo.cz\css\R_Lyr3.css";
+            outputFileCss = @"E:\vs\Projects\sunamo.cz\lyrics.sunamo.cz\css\R_Lyr3.css";
 
             TF.WriteAllText(outputFileCss, g.ToString());
         }
