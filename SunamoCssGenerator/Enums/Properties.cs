@@ -1,4 +1,4 @@
-﻿public enum Properties
+public enum Properties
 {
 	AlignContent,
 	AlignItems,
