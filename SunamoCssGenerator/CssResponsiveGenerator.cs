@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 public class CssResponsiveGenerator : CssGenerator
 {
     public override string ToString()

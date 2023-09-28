@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 public class PropertiesConversions
 {
 	static Dictionary<string, string> dict = new Dictionary<string, string>();
