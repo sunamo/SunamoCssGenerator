@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputType>Exe</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\sunamoWithoutDep\SunamoExceptions\SunamoExceptions.csproj"></ProjectReference>
+    <PackageReference Include="SunamoExceptions" Version="*" />
     <ProjectReference Include="..\SunamoCssGenerator\SunamoCssGenerator.csproj"></ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
