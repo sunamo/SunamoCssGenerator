@@ -1,5 +1,3 @@
-
-namespace SunamoCssGenerator;
 public class PropertiesConversions
 {
 	static Dictionary<string, string> dict = new Dictionary<string, string>();

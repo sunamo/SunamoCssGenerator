@@ -1,5 +1,3 @@
-
-namespace SunamoCssGenerator;
 public class CssGenerator
 {
     StringBuilder sb = new StringBuilder();

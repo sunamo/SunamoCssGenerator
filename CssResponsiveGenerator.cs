@@ -1,5 +1,3 @@
-
-namespace SunamoCssGenerator;
 public class CssResponsiveGenerator : CssGenerator
 {
     public override string ToString()

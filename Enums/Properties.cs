@@ -1,5 +1,3 @@
-
-namespace SunamoCssGenerator.Enums;
 public enum Properties
 {
 	AlignContent,
