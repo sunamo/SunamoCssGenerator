@@ -6,12 +6,13 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="SunamoExceptions" Version="*" />
-    <ProjectReference Include="..\SunamoCssGenerator\SunamoCssGenerator.csproj"></ProjectReference>
+    <ProjectReference Include="..\SunamoCssGenerator\SunamoCssGenerator.csproj">
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
+    <DefineConstants>$(DefineConstants);ASYNC;SunamoCssGenerator.Cmd;SunamoCssGenerator.Cmd.csproj</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
+    <DefineConstants>$(DefineConstants);ASYNC;SunamoCssGenerator.Cmd;SunamoCssGenerator.Cmd.csproj</DefineConstants>
   </PropertyGroup>
 </Project>
