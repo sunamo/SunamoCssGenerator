@@ -9,7 +9,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <Version>24.7.13.1</Version>
+    <Version>24.7.15.1</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC;SunamoCssGenerator;SunamoCssGenerator.csproj</DefineConstants>
