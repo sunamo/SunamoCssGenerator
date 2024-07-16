@@ -1,4 +1,4 @@
-
+namespace SunamoCssGenerator;
 
 public class CssResponsiveGenerator : CssGenerator
 {

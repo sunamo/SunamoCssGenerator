@@ -1,4 +1,4 @@
-
+namespace SunamoCssGenerator;
 
 public class CssGenerator
 {
@@ -45,7 +45,7 @@ public class CssGenerator
             sb.AppendLine(PropertiesConversions.Convert(item.Property.ToString()) + ": " + item.Value + ";");
         }
 
-        sb.TrimEnd();
+        //sb.TrimEnd();
         End(tabCount);
     }
 

@@ -1,3 +1,5 @@
+namespace SunamoCssGenerator.Extensions;
+
 public static class StringBuilderExtensions
 {
     #region For easy copy

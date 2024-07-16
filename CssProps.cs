@@ -1,3 +1,5 @@
+namespace SunamoCssGenerator;
+
 public class CssProps
 {
     public static CssProperty Width(string v)
