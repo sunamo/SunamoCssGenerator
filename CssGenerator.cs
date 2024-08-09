@@ -2,7 +2,7 @@ namespace SunamoCssGenerator;
 
 public class CssGenerator
 {
-    StringBuilder sb = new StringBuilder();
+    private readonly StringBuilder sb = new();
 
     public override string ToString()
     {
@@ -12,9 +12,9 @@ public class CssGenerator
     public void AddMediaMinMaxWidth(int tabCount, int maxWidth, Func<int, int> GetMinFromMax)
     {
         AddTab(tabCount);
-        sb.AppendLine("@media screen and (min-width: " + GetMinFromMax(maxWidth) + "px) and (max-width: " + maxWidth + "px) {");
+        sb.AppendLine("@media screen and (min-width: " + GetMinFromMax(maxWidth) + "px) and (max-width: " + maxWidth +
+                      "px) {");
     }
-
 
 
     public void AddId(int tabCount, string name, params CssProperty[] cssProps)
@@ -29,10 +29,7 @@ public class CssGenerator
 
     public void AddTab(int tabCount)
     {
-        for (int i = 0; i < tabCount; i++)
-        {
-            sb.Append(AllStrings.tab);
-        }
+        for (var i = 0; i < tabCount; i++) sb.Append(AllStrings.tab);
     }
 
     private void Add(int tabCount, string v, string name, CssProperty[] cssProps)

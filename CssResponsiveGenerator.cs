@@ -2,12 +2,67 @@ namespace SunamoCssGenerator;
 
 public class CssResponsiveGenerator : CssGenerator
 {
+    public static List<int> sizes = new(new[]
+    {
+        _768,
+        _1024,
+        _1280,
+        _1366,
+        _1440,
+        _1536,
+        _1600,
+        _1920,
+        _2160,
+        _2280,
+        _2304,
+        _2436,
+        _2560,
+        _2732,
+        _2880,
+        _2960,
+        _3200,
+        _3440,
+        _3840,
+        _4096,
+        _4480,
+        _5120,
+        _6016,
+        _6040,
+        _7680,
+        _8192,
+        _10240,
+        _15360,
+        _20000
+    });
+
     public override string ToString()
     {
         return base.ToString();
     }
 
-    #region From https://en.wikipedia.org/wiki/List_of_common_resolutions
+
+    /// <summary>
+    ///     In value is in every element name of element and their width when is max-width key in outer dict
+    /// </summary>
+    /// <param name="id"></param>
+    public void Generate(Dictionary<int, Dictionary<string, int>> id)
+    {
+        foreach (var item3 in sizes.Skip(2))
+        {
+            AddMediaMinMaxWidth(0, item3, GetMinFromMax);
+            foreach (var item2 in id[item3]) AddId(1, item2.Key, CssProps.Width(item2.Value + AllStrings.px));
+            End(0);
+        }
+    }
+
+    private int GetMinFromMax(int maxWidth)
+    {
+        var dx = sizes.IndexOf(maxWidth);
+        return sizes[dx - 1] + 1;
+    }
+
+    #region From https: //en.wikipedia.org/wiki/List_of_common_resolutions
+
     public const int _768 = 768;
     public const int _1024 = 1024;
     public const int _1280 = 1280;
@@ -39,63 +94,7 @@ public class CssResponsiveGenerator : CssGenerator
     public const int _8192 = 8192;
     public const int _10240 = 10240;
     public const int _15360 = 15360;
-    public const int _20000 = 20000; 
+    public const int _20000 = 20000;
+
     #endregion
-
-
-
-    public static List<int> sizes = new List<int>(new int[]{ _768,
-_1024,
-_1280,
-_1366,
-_1440,
-_1536,
-_1600,
-_1920,
-_2160 ,
-_2280 ,
-_2304 ,
-_2436 ,
-_2560 ,
-_2732 ,
-_2880 ,
-_2960 ,
-_3200 ,
-_3440 ,
-_3840 ,
-_4096 ,
-_4480 ,
-_5120 ,
-_6016 ,
-_6040 ,
-_7680 ,
-_8192 ,
-_10240 ,
-_15360 ,
-_20000 
-    });
-
-
-    /// <summary>
-    /// In value is in every element name of element and their width when is max-width key in outer dict
-    /// </summary>
-    /// <param name="id"></param>
-    public void Generate(Dictionary<int, Dictionary<string, int>> id)
-    {
-        foreach (var item3 in sizes.Skip(2))
-        {
-            AddMediaMinMaxWidth(0, item3, GetMinFromMax);
-            foreach (var item2 in id[item3])
-            {
-                AddId(1, item2.Key, CssProps.Width(item2.Value + AllStrings.px));
-            }
-            End(0);
-        }
-    }
-
-    private int GetMinFromMax(int maxWidth)
-    {
-        var dx = sizes.IndexOf(maxWidth);
-        return sizes[dx - 1] + 1;
-    }
 }
