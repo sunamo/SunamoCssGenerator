@@ -1,7 +1,5 @@
 namespace SunamoCssGenerator._sunamo;
 
-
-
 internal class AllStrings
 {
     internal const string rcub = "}";
