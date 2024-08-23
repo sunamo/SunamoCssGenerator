@@ -1,5 +1,5 @@
 namespace SunamoCssGenerator.Cmd
-{
+
     class Program
     {
         public static string outputFileCss = @"D:\_Test\SunamoCssGenerator.Cmd\Output\output.css";
