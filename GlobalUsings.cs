@@ -5,3 +5,7 @@ global using System;
 global using SunamoCssGenerator.Data;
 global using SunamoCssGenerator.Enums;
 global using SunamoCssGenerator._sunamo;
+global using System.Collections;
+global using System.Reflection;
+global using System.Net;
+global using System.Diagnostics;
