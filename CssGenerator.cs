@@ -29,7 +29,7 @@ public class CssGenerator
 
     public void AddTab(int tabCount)
     {
-        for (var i = 0; i < tabCount; i++) sb.Append(AllStrings.tab);
+        for (var i = 0; i < tabCount; i++) sb.Append("\t");
     }
 
     private void Add(int tabCount, string v, string name, CssProperty[] cssProps)
@@ -50,7 +50,7 @@ public class CssGenerator
     {
         sb.AppendLine();
         AddTab(tabCount);
-        sb.AppendLine(AllStrings.rcub);
+        sb.AppendLine("}");
         sb.AppendLine();
     }
 }

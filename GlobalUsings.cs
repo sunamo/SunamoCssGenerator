@@ -9,3 +9,7 @@ global using System.Collections;
 global using System.Reflection;
 global using System.Net;
 global using System.Diagnostics;
+global using System.Diagnostics.CodeAnalysis;
+global using SunamoCssGenerator;
+global using SunamoCssGenerator.Extensions;
+global using SunamoCssGenerator._sunamo.SunamoExceptions;

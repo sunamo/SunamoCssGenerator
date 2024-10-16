@@ -50,7 +50,7 @@ public class CssResponsiveGenerator : CssGenerator
         foreach (var item3 in sizes.Skip(2))
         {
             AddMediaMinMaxWidth(0, item3, GetMinFromMax);
-            foreach (var item2 in id[item3]) AddId(1, item2.Key, CssProps.Width(item2.Value + AllStrings.px));
+            foreach (var item2 in id[item3]) AddId(1, item2.Key, CssProps.Width(item2.Value + "px"));
             End(0);
         }
     }
