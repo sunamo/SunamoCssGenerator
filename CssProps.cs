@@ -4,6 +4,6 @@ public class CssProps
 {
     public static CssProperty Width(string v)
     {
-        return new CssProperty { Property = Properties.Width, Value = v };
+        return new CssProperty(Properties.Width, v);
     }
 }
