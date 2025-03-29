@@ -12,7 +12,6 @@ global using System.Diagnostics.CodeAnalysis;
 global using SunamoCssGenerator;
 global using SunamoCssGenerator.Extensions;
 global using SunamoCssGenerator._sunamo;
-
 global using ILogger = Microsoft.Extensions.Logging.ILogger;
 global using Microsoft.Extensions.Logging;
 global using NullLogger = Microsoft.Extensions.Logging.Abstractions.NullLogger;
