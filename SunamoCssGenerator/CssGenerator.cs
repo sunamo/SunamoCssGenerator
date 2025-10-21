@@ -1,18 +1,21 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoCssGenerator;
 
 public class CssGenerator
 {
-    private readonly StringBuilder sb = new();
+    private readonly StringBuilder stringBuilder = new();
 
     public override string ToString()
     {
-        return sb.ToString();
+        return stringBuilder.ToString();
     }
 
     public void AddMediaMinMaxWidth(int tabCount, int maxWidth, Func<int, int> GetMinFromMax)
     {
         AddTab(tabCount);
-        sb.AppendLine("@media screen and (min-width: " + GetMinFromMax(maxWidth) + "px) and (max-width: " + maxWidth +
+        stringBuilder.AppendLine("@media screen and (min-width: " + GetMinFromMax(maxWidth) + "px) and (max-width: " + maxWidth +
                       "px) {");
     }
 
@@ -29,28 +32,28 @@ public class CssGenerator
 
     public void AddTab(int tabCount)
     {
-        for (var i = 0; i < tabCount; i++) sb.Append("\t");
+        for (var i = 0; i < tabCount; i++) stringBuilder.Append("\t");
     }
 
     private void Add(int tabCount, string v, string name, CssProperty[] cssProps)
     {
         AddTab(tabCount);
-        sb.AppendLine(v + name + " {");
+        stringBuilder.AppendLine(v + name + " {");
         foreach (var item in cssProps)
         {
             AddTab(tabCount + 1);
-            sb.AppendLine(PropertiesConversions.Convert(item.Property.ToString()) + ": " + item.Value + ";");
+            stringBuilder.AppendLine(PropertiesConversions.Convert(item.Property.ToString()) + ": " + item.Value + ";");
         }
 
-        //sb.TrimEnd();
+        //stringBuilder.TrimEnd();
         End(tabCount);
     }
 
     public void End(int tabCount)
     {
-        sb.AppendLine();
+        stringBuilder.AppendLine();
         AddTab(tabCount);
-        sb.AppendLine("}");
-        sb.AppendLine();
+        stringBuilder.AppendLine("}");
+        stringBuilder.AppendLine();
     }
 }
