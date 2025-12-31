@@ -2,7 +2,7 @@ namespace SunamoCssGenerator;
 
 public class CssResponsiveGenerator : CssGenerator
 {
-    public static List<int> sizes = new(new[]
+    public static List<int> Sizes = new(new[]
     {
         _768,
         _1024,
@@ -44,21 +44,21 @@ public class CssResponsiveGenerator : CssGenerator
     /// <summary>
     ///     In value is in every element name of element and their width when is max-width key in outer dict
     /// </summary>
-    /// <param name="id"></param>
-    public void Generate(Dictionary<int, Dictionary<string, int>> id)
+    /// <param name="elementWidthsByMaxWidth"></param>
+    public void Generate(Dictionary<int, Dictionary<string, int>> elementWidthsByMaxWidth)
     {
-        foreach (var item3 in sizes.Skip(2))
+        foreach (var maxWidth in Sizes.Skip(2))
         {
-            AddMediaMinMaxWidth(0, item3, GetMinFromMax);
-            foreach (var item2 in id[item3]) AddId(1, item2.Key, CssProps.Width(item2.Value + "px"));
+            AddMediaMinMaxWidth(0, maxWidth, GetMinFromMax);
+            foreach (var element in elementWidthsByMaxWidth[maxWidth]) AddId(1, element.Key, CssProps.Width(element.Value + "px"));
             End(0);
         }
     }
 
     private int GetMinFromMax(int maxWidth)
     {
-        var dx = sizes.IndexOf(maxWidth);
-        return sizes[dx - 1] + 1;
+        var currentIndex = Sizes.IndexOf(maxWidth);
+        return Sizes[currentIndex - 1] + 1;
     }
 
     #region From https: //en.wikipedia.org/wiki/List_of_common_resolutions

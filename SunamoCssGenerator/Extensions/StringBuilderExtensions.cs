@@ -4,12 +4,12 @@ public static class StringBuilderExtensions
 {
     #region For easy copy
 
-    public static void TrimEnd(this StringBuilder sb)
+    public static void TrimEnd(this StringBuilder stringBuilder)
     {
-        var length = sb.Length;
+        var length = stringBuilder.Length;
         for (var i = length - 1; i >= 0; i--)
-            if (char.IsWhiteSpace(sb[i]))
-                sb.Remove(i, 1);
+            if (char.IsWhiteSpace(stringBuilder[i]))
+                stringBuilder.Remove(i, 1);
             else
                 break;
     }

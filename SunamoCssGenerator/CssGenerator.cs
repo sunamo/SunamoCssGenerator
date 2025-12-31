@@ -9,10 +9,10 @@ public class CssGenerator
         return stringBuilder.ToString();
     }
 
-    public void AddMediaMinMaxWidth(int tabCount, int maxWidth, Func<int, int> GetMinFromMax)
+    public void AddMediaMinMaxWidth(int tabCount, int maxWidth, Func<int, int> getMinFromMax)
     {
         AddTab(tabCount);
-        stringBuilder.AppendLine("@media screen and (min-width: " + GetMinFromMax(maxWidth) + "px) and (max-width: " + maxWidth +
+        stringBuilder.AppendLine("@media screen and (min-width: " + getMinFromMax(maxWidth) + "px) and (max-width: " + maxWidth +
                       "px) {");
     }
 
@@ -32,10 +32,10 @@ public class CssGenerator
         for (var i = 0; i < tabCount; i++) stringBuilder.Append("\t");
     }
 
-    private void Add(int tabCount, string v, string name, CssProperty[] cssProps)
+    private void Add(int tabCount, string prefix, string name, CssProperty[] cssProps)
     {
         AddTab(tabCount);
-        stringBuilder.AppendLine(v + name + " {");
+        stringBuilder.AppendLine(prefix + name + " {");
         foreach (var item in cssProps)
         {
             AddTab(tabCount + 1);
