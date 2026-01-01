@@ -1,19 +1,27 @@
 namespace SunamoCssGenerator;
 
+/// <summary>
+/// Converts C# property names to CSS property names (PascalCase to kebab-case)
+/// </summary>
 public class PropertiesConversions
 {
     private static readonly Dictionary<string, string> propertyNameMappings = new();
 
     /// <summary>
-    ///     Before first calling must call Init()
+    /// Converts a property name from PascalCase to CSS kebab-case format.
+    /// Note: Init() must be called before first use.
     /// </summary>
-    /// <param name="propertyName"></param>
-    /// <returns></returns>
+    /// <param name="propertyName">The property name in PascalCase</param>
+    /// <returns>The CSS property name in kebab-case</returns>
     public static string Convert(string propertyName)
     {
         return propertyNameMappings[propertyName];
     }
 
+    /// <summary>
+    /// Initializes the property name mappings dictionary.
+    /// Must be called before using Convert() method.
+    /// </summary>
     public static void Init()
     {
         propertyNameMappings.Add("AlignContent", "align-content");

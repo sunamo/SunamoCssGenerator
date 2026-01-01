@@ -1,7 +1,13 @@
 namespace SunamoCssGenerator;
 
+/// <summary>
+/// Generates responsive CSS with media queries for common screen resolutions
+/// </summary>
 public class CssResponsiveGenerator : CssGenerator
 {
+    /// <summary>
+    /// List of common screen widths in pixels for responsive breakpoints
+    /// </summary>
     public static List<int> Sizes = new(new[]
     {
         _768,
@@ -35,16 +41,20 @@ public class CssResponsiveGenerator : CssGenerator
         _20000
     });
 
+    /// <summary>
+    /// Returns the generated responsive CSS as a string
+    /// </summary>
+    /// <returns>The generated CSS code</returns>
     public override string ToString()
     {
         return base.ToString();
     }
 
-
     /// <summary>
-    ///     In value is in every element name of element and their width when is max-width key in outer dict
+    /// Generates responsive CSS with media queries for different screen widths.
+    /// The dictionary maps max-width breakpoints to element names and their widths.
     /// </summary>
-    /// <param name="elementWidthsByMaxWidth"></param>
+    /// <param name="elementWidthsByMaxWidth">Dictionary where key is max-width breakpoint and value is a dictionary of element names to their widths</param>
     public void Generate(Dictionary<int, Dictionary<string, int>> elementWidthsByMaxWidth)
     {
         foreach (var maxWidth in Sizes.Skip(2))
@@ -55,6 +65,11 @@ public class CssResponsiveGenerator : CssGenerator
         }
     }
 
+    /// <summary>
+    /// Calculates the minimum width from a maximum width by finding the previous breakpoint
+    /// </summary>
+    /// <param name="maxWidth">The maximum width in pixels</param>
+    /// <returns>The minimum width (previous breakpoint + 1)</returns>
     private int GetMinFromMax(int maxWidth)
     {
         var currentIndex = Sizes.IndexOf(maxWidth);
@@ -63,6 +78,8 @@ public class CssResponsiveGenerator : CssGenerator
 
     #region From https: //en.wikipedia.org/wiki/List_of_common_resolutions
 
+    /// <summary>Common screen widths in pixels for responsive breakpoints</summary>
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public const int _768 = 768;
     public const int _1024 = 1024;
     public const int _1280 = 1280;
@@ -95,6 +112,7 @@ public class CssResponsiveGenerator : CssGenerator
     public const int _10240 = 10240;
     public const int _15360 = 15360;
     public const int _20000 = 20000;
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
     #endregion
 }
