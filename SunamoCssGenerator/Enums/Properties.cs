@@ -1,3 +1,4 @@
+// variables names: ok
 namespace SunamoCssGenerator.Enums;
 
 public enum Properties
