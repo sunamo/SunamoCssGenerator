@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoCssGenerator.Tests\\SunamoCssGenerator.Tests.csproj" />
+  <Project Path="RunnerCssGenerator\\RunnerCssGenerator.csproj" />
+  <Project Path="SunamoCssGenerator\SunamoCssGenerator.csproj" />
+</Solution>
