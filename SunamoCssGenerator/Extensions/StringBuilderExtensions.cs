@@ -1,9 +1,16 @@
 namespace SunamoCssGenerator.Extensions;
 
+/// <summary>
+/// Extension methods for StringBuilder
+/// </summary>
 public static class StringBuilderExtensions
 {
     #region For easy copy
 
+    /// <summary>
+    /// Removes all trailing whitespace characters from the StringBuilder
+    /// </summary>
+    /// <param name="stringBuilder">The StringBuilder to trim</param>
     public static void TrimEnd(this StringBuilder stringBuilder)
     {
         var length = stringBuilder.Length;
