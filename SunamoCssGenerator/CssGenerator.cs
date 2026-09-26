@@ -11,10 +11,7 @@ public class CssGenerator
     /// Returns the generated CSS as a string
     /// </summary>
     /// <returns>The generated CSS code</returns>
-    public override string ToString()
-    {
-        return stringBuilder.ToString();
-    }
+    public override string ToString() => stringBuilder.ToString();
 
     /// <summary>
     /// Adds a media query with min-width and max-width screen constraints

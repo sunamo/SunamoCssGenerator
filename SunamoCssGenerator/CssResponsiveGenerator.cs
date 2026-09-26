@@ -45,10 +45,7 @@ public class CssResponsiveGenerator : CssGenerator
     /// Returns the generated responsive CSS as a string
     /// </summary>
     /// <returns>The generated CSS code</returns>
-    public override string ToString()
-    {
-        return base.ToString();
-    }
+    public override string ToString() => base.ToString();
 
     /// <summary>
     /// Generates responsive CSS with media queries for different screen widths.
