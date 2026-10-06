@@ -1,5 +1,10 @@
 # SunamoCssGenerator
 
+## Short description
+
+Generátor CSS pro jednotlivá běžná rozlišení displeje.
+
+
 Generating css for each of the common display resolutions
 
 ## Overview
