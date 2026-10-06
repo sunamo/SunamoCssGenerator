@@ -1,8 +1,5 @@
 namespace SunamoCssGenerator;
 
-/// <summary>
-/// Factory class for creating CSS properties
-/// </summary>
 public class CssProps
 {
     /// <summary>
