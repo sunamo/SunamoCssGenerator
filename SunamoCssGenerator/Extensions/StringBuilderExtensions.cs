@@ -1,9 +1,16 @@
 namespace SunamoCssGenerator.Extensions;
 
+/// <summary>
+/// Represents the string builder extensions type.
+/// </summary>
 public static class StringBuilderExtensions
 {
     #region For easy copy
 
+    /// <summary>
+    /// Trim end.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
     public static void TrimEnd(this StringBuilder stringBuilder)
     {
         var length = stringBuilder.Length;

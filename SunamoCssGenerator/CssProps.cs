@@ -1,5 +1,8 @@
 namespace SunamoCssGenerator;
 
+/// <summary>
+/// Represents the css props type.
+/// </summary>
 public class CssProps
 {
     /// <summary>

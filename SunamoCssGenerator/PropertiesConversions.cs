@@ -1,14 +1,25 @@
 namespace SunamoCssGenerator;
 
+/// <summary>
+/// Represents the properties conversions type.
+/// </summary>
 public class PropertiesConversions
 {
     private static readonly Dictionary<string, string> propertyNameMappings = new();
 
+    /// <summary>
+    /// Convert.
+    /// </summary>
+    /// <param name="propertyName">The property name.</param>
+    /// <returns>The convert result.</returns>
     public static string Convert(string propertyName)
     {
         return propertyNameMappings[propertyName];
     }
 
+    /// <summary>
+    /// Init.
+    /// </summary>
     public static void Init()
     {
         propertyNameMappings.Add("AlignContent", "align-content");
